@@ -1,4 +1,6 @@
+import br.com.poo.dominio.Bootcamp;
 import br.com.poo.dominio.Curso;
+import br.com.poo.dominio.Dev;
 import br.com.poo.dominio.Mentoria;
 
 import java.time.LocalDate;
@@ -23,6 +25,27 @@ public class Main {
         System.out.println(curso1);
         System.out.println(curso2);
         System.out.println(mentoria);
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descrição Bootcamp");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev alison = new Dev();
+        alison.setNome("Alison");
+        alison.inscreverBootcamp(bootcamp);
+        System.out.println("Conteudos inscritos" + alison.getConteudosIncritos());
+        System.out.println("Conteudos concluídos" + alison.getConteudosConcluidos());
+        System.out.println("Total XP" + alison.calcularTotalXp());
+
+        alison.progredir();
+
+        System.out.println("Conteudos inscritos" + alison.getConteudosIncritos());
+        System.out.println("Conteudos concluídos" + alison.getConteudosConcluidos());
+        System.out.println("Total XP" + alison.calcularTotalXp());
+
 
 
     }
